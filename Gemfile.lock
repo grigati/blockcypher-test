@@ -1,0 +1,37 @@
+PATH
+  remote: .
+  specs:
+    blockcypher-test (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bitcoin-ruby (0.0.19)
+      eventmachine
+      ffi
+      scrypt
+    blockcypher-ruby (0.2.6)
+      bitcoin-ruby (~> 0.0.5)
+      ffi
+    eventmachine (1.2.7)
+    ffi (1.11.1)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
+    minitest (5.11.3)
+    rake (10.5.0)
+    scrypt (3.0.6)
+      ffi-compiler (>= 1.0, < 2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  blockcypher-ruby (~> 0.2.6)
+  blockcypher-test!
+  bundler (~> 2.0)
+  minitest (~> 5.0)
+  rake (~> 10.0)
+
+BUNDLED WITH
+   2.0.1
