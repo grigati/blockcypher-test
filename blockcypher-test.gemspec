@@ -1,11 +1,9 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "blockcypher/test/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "blockcypher-test"
-  spec.version       = Blockcypher::Test::VERSION
   spec.authors       = [""]
   spec.email         = [""]
 
