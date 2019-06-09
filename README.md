@@ -26,7 +26,7 @@ A função principal pode ser executada com o comando `ruby lib/main.rb` ou aind
 rake
 ```
 
-Os testes podem ser executados com o comando `test/main_test.rb` ou com:
+Os testes podem ser executados com o comando `ruby test/main_test.rb` ou com:
 
 ```
 rake test
