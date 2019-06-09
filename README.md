@@ -1,39 +1,33 @@
 # Blockcypher::Test
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/blockcypher/test`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+Este programa envia 1 BCY para um endereço a ser definido e mostra o balanço final desse endereço.
 
-## Installation
+## Configuração
 
-Add this line to your application's Gemfile:
+Para fazer a transferência, é necessário alterar o token da API e o endereço no arquivo `lib/adress.rb`. Procure as seguintes linhas e faça as substituições necessárias:
 
-```ruby
-gem 'blockcypher-test'
+```
+@token = "COLOQUE O TOKEN AQUI"
+@address = "COLOQUE O ENDEREÇO AQUI"
 ```
 
-And then execute:
+## Executando o código
 
-    $ bundle
+Após obter o código deste repositório, execute o seguinte para instalar as dependências:
 
-Or install it yourself as:
+```
+run `bin/setup`
+```
 
-    $ gem install blockcypher-test
+A função principal pode ser executada com o comando `ruby lib/main.rb` ou ainda:
 
-## Usage
+```
+rake
+```
 
-TODO: Write usage instructions here
+Os testes podem ser executados com o comando `test/main_test.rb` ou com:
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/blockcypher-test.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+```
+rake test
+```
