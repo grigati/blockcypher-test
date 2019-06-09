@@ -11,6 +11,7 @@ class Main
   # Params:
   # amount: quantidade a ser enviada em BCY
   #
+  # Retorna boolean indicando se a transferência foi realizada com sucesso
   def transfer(amount)
     puts "\n\nEnviando " + amount.to_s + " BCY para " + @address
 
@@ -21,8 +22,12 @@ class Main
     rescue Exception => ex
       puts "Erro ao enviar"
       puts ex
+
+      return false
     end
+
     puts "Concluído"
+    return true
   end
 end
 
