@@ -5,6 +5,7 @@ class Address
   def initialize
     @token = "COLOQUE O TOKEN AQUI"
     @address = "COLOQUE O ENDERECO AQUI"
+    @block_cypher = BlockCypher::Api.new(currency:BlockCypher::BCY, network:BlockCypher::TEST_NET, api_token: @token)
   end
 
   # Transfere BCY para o endereço @address
@@ -17,8 +18,7 @@ class Address
     puts "\n\nEnviando " + amount.to_s + " BCY para " + @address
 
     begin
-      block_cypher = BlockCypher::Api.new(currency:BlockCypher::BCY, network:BlockCypher::TEST_NET, api_token: @token)
-      response = block_cypher.faucet(@address, amount)
+      response = @block_cypher.faucet(@address, amount)
       puts "Transferência realizada, tx_ref:" + response["tx_ref"]
     rescue Exception => ex
       puts "Erro ao enviar"
