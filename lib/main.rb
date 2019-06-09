@@ -1,6 +1,7 @@
 require "blockcypher"
 
 class Main
+class Address
   def initialize
     @token = "COLOQUE O TOKEN AQUI"
     @address = "COLOQUE O ENDERECO AQUI"
@@ -31,5 +32,5 @@ class Main
   end
 end
 
-main = Main.new
-main.transfer(1)
+address = Address.new
+address.transfer(1)
