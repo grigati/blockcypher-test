@@ -30,7 +30,7 @@ class Address
     return true
   end
 
-  # Retorna o balanço final
+  # Retorna o balanço final ou exceção
   def getFinalBalance()
     response = @block_cypher.address_balance(@address)
     return response["final_balance"]
