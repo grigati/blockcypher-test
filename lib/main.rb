@@ -13,8 +13,15 @@ class Main
   #
   def transfer(amount)
     puts "\n\nEnviando " + amount.to_s + " BCY para " + @address
-    block_cypher = BlockCypher::Api.new(currency:BlockCypher::BCY, network:BlockCypher::TEST_NET, api_token: @token)
-    block_cypher.faucet(@address, amount)
+
+    begin
+      block_cypher = BlockCypher::Api.new(currency:BlockCypher::BCY, network:BlockCypher::TEST_NET, api_token: @token)
+      response = block_cypher.faucet(@address, amount)
+      puts "Transferência realizada, tx_ref:" + response["tx_ref"]
+    rescue Exception => ex
+      puts "Erro ao enviar"
+      puts ex
+    end
     puts "Concluído"
   end
 end
