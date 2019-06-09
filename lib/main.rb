@@ -30,7 +30,21 @@ class Address
     puts "Concluído"
     return true
   end
+
+  # Retorna o balanço final
+  def getFinalBalance()
+    response = @block_cypher.address_balance(@address)
+    return response["final_balance"]
+  end
 end
 
+# Faz a transferência
 address = Address.new
 address.transfer(1)
+
+# Printa o balanço final
+begin
+  puts "\n\nBalanço final para o endereço: " + address.getFinalBalance().to_s
+rescue
+  puts "\n\nNão foi possível obter o balanço para o endereço informado."
+end
